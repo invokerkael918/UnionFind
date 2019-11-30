@@ -26,7 +26,14 @@ class Solution:
                 self.union(account[email - 1], account[email])
 
         email_set = collections.defaultdict(set)
+        """
+        defaultdict(<class 'set'>, {'john00@mail.com': {'johnsmith@mail.com', 'john00@mail.com', 'john_newyork@mail.com'}, 
+        'mary@mail.com': {'mary@mail.com'}, 'johnnybravo@mail.com': {'johnnybravo@mail.com'}})
+        """
         email_to_acct = {}
+        """
+        {'john00@mail.com': 'John', 'mary@mail.com': 'Mary', 'johnnybravo@mail.com': 'John'}
+        """
         for account in accounts:
             if not account:
                 continue
