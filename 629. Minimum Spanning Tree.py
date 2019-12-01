@@ -1,6 +1,12 @@
 class Solution:
     # @param {Connection[]} connections given a list of connections include two cities and cost
     # @return {Connection[]} a list of connections from results
+    """
+    (1) 按距离对edge进行排序
+    (2) 循环，把所有城市初始化，父节点设置为自己，累加计数器
+    (3) 循环，对每个edge进行union操作；如果不属于同一个区域，则联通并将count减1，并将这个edge加入结果
+    (4) 如果最终所有区域连在一起，则count = 1，返回results； 否则返回空数组
+    """
     def lowestCost(self, connections):
         if not connections or len(connections) == 0:
             return []
